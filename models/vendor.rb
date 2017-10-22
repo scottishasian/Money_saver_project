@@ -10,10 +10,7 @@ class Vendor
   end
 
   def save()
-    sql = "INSERT INTO vendors (
-           name
-           )
-
+    sql = "INSERT INTO vendors (name)
            VALUES ($1)
            RETURNING *"
     values = [@name]

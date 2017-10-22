@@ -15,6 +15,7 @@ CREATE TABLE types (
 CREATE TABLE transactions (
   id SERIAL8 PRIMARY KEY,
   amount INT8,
+  name VARCHAR(255),
   vendor_id INT8 REFERENCES vendors(id),
   type_id INT8 REFERENCES types(id),
   date_of_buy DATE
