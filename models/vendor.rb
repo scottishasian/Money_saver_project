@@ -28,4 +28,31 @@ class Vendor
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM vendors"
+    values = []
+    vendors = SqlRunner.run(sql, values)
+    result = vendors.map { |vendor| Vendor.new(vendor)}
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM vendors
+           WHERE id = $1"
+    values = [id]
+    vendors = SqlRunner.run(sql, values)
+    result = Vendor.new(vendors.first)
+    return result
+  end
+
+  def update() #come back to
+    sql = "UPDATE vendors
+           SET (name) = ($1)
+           WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+
+
 end
