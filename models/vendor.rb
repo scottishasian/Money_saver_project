@@ -50,6 +50,12 @@ class Vendor
     SqlRunner.run(sql, values)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM vendors"
+    values = []
+    SqlRunner.run(sql, values)
+  end
+
 
 
 end
