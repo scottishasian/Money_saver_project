@@ -16,7 +16,7 @@ CREATE TABLE transactions (
   id SERIAL8 PRIMARY KEY,
   amount DECIMAL(10,2),
   name VARCHAR(255),
-  vendor_id INT8 REFERENCES vendors(id),
-  type_id INT8 REFERENCES types(id),
+  vendor_id INT8 REFERENCES vendors(id) ON DELETE CASCADE,
+  type_id INT8 REFERENCES types(id) ON DELETE CASCADE,
   date_of_buy DATE
 );

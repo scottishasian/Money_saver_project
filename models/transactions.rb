@@ -23,6 +23,31 @@ class Transactions
     @id = result['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM transactions
+           WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM transactions"
+    values = []
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE transactions
+           SET (amount, name, date_of_buy) = ($1, $2, $3)
+           WHERE id = $4"
+    values = [@amount, @name, @date_of_buy, @id]
+    SqlRunner.run(sql, values)
+  end
+
+
+
+#need to delete cascade on sql.
+
 
 
 end
