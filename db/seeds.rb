@@ -3,6 +3,10 @@ require_relative('../models/vendor.rb')
 require_relative('../models/type.rb')
 require_relative('../models/transactions.rb')
 
+Vendor.delete_all
+Type.delete_all
+
+
 vendor1 = Vendor.new('name' => 'Sainsburys')
 vendor2 = Vendor.new('name' => 'The Gym')
 

@@ -14,6 +14,15 @@ class Transactions
     @date_of_buy = options['date_of_buy']
   end
 
+  def save()
+    sql =  "INSERT INTO transactions (amount, name, vendor_id, type_id, date_of_buy)
+            VALUES ($1, $2, $3, $4, $5)
+            RETURNING *"
+    values = [@amount, @name, @vendor_id, @type_id, @date_of_buy]
+    result = SqlRunner.run(sql, values).first
+    @id = result['id'].to_i
+  end
+
 
 
 end
