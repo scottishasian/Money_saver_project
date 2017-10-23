@@ -1,5 +1,6 @@
 require('pg')
 require_relative('../db/sql_runner')
+require_relative('type.rb')
 
 class Transactions
 
@@ -8,7 +9,7 @@ class Transactions
 
   def initialize(options)
     @id = options['id'].to_i
-    @amount = options['amount'].to_i
+    @amount = options['amount'].to_f
     @description = options['description']
     @vendor_id = options['vendor_id'].to_i
     @type_id = options['type_id'].to_i
@@ -48,10 +49,17 @@ class Transactions
 
 #-------------------------Find methods----------------------------
 
-def find_type
+def type()
+  sql = "SELECT * FROM types
+       WHERE id = $1"
+  values = [@type_id]
+  result = SqlRunner.run(sql, values)
+  type_info = result[0]
+  type_details = Type.new(type_info)
+  return type_details.type_name
 end
 
-def find_vendor
+def vendor()
 end
 
 def self.find(id)

@@ -58,13 +58,13 @@ class Vendor
   end
 
   #find by name. Need to write it to return all transaction data. Maybe put in transaction.rb
-  def self.find(name)
-    sql = "SELECT * FROM vendors
-           WHERE name = $1"
-    values = [name]
-    vendors = SqlRunner.run(sql, values)
-    result = Vendor.new(vendors.first)
-    return result
-  end
+  # def self.find(name)
+  #   sql = "SELECT * FROM vendors
+  #          WHERE name = $1"
+  #   values = [name]
+  #   vendors = SqlRunner.run(sql, values)
+  #   result = Vendor.new(vendors.first)
+  #   return result
+  # end
 
 end
