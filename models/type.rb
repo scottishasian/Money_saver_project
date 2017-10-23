@@ -4,18 +4,18 @@ require_relative('../db/sql_runner')
 class Type
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :type_name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @type_name = options['type_name']
   end
 
   def save()
-    sql = "INSERT INTO types (name)
+    sql = "INSERT INTO types (type_name)
            VALUES ($1)
            RETURNING *"
-    values = [@name]
+    values = [@type_name]
     result = SqlRunner.run(sql, values).first
     @id = result['id'].to_i
   end
@@ -37,9 +37,9 @@ class Type
 
   def update() #Come back to this.
     sql = "UPDATE types
-           SET (name) = ($1)
+           SET (type_name) = ($1)
            WHERE id = $2"
-    values = [@name, @id]
+    values = [@type_name, @id]
     SqlRunner.run(sql, values)
   end
 

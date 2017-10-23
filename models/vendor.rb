@@ -3,18 +3,18 @@ require_relative('../db/sql_runner')
 
 class Vendor
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :vendor_name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @vendor_name = options['vendor_name']
   end
 
   def save()
-    sql = "INSERT INTO vendors (name)
+    sql = "INSERT INTO vendors (vendor_name)
            VALUES ($1)
            RETURNING *"
-    values = [@name]
+    values = [@vendor_name]
     result = SqlRunner.run(sql, values).first
     @id = result['id'].to_i
   end
@@ -45,9 +45,9 @@ class Vendor
 
   def update() #come back to
     sql = "UPDATE vendors
-           SET (name) = ($1)
+           SET (vendor_name) = ($1)
            WHERE id = $2"
-    values = [@name, @id]
+    values = [@vendor_name, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -57,7 +57,14 @@ class Vendor
     SqlRunner.run(sql, values)
   end
 
-  #find by name.
-
+  #find by name. Need to write it to return all transaction data. Maybe put in transaction.rb
+  def self.find(name)
+    sql = "SELECT * FROM vendors
+           WHERE name = $1"
+    values = [name]
+    vendors = SqlRunner.run(sql, values)
+    result = Vendor.new(vendors.first)
+    return result
+  end
 
 end
