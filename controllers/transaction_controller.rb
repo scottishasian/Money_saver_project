@@ -5,5 +5,6 @@ require_relative('../models/vendor.rb')
 
 get '/transactions' do
   @transactions = Transactions.all()
+  @total = Transactions.total()
   erb(:index)
 end
