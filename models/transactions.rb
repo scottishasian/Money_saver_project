@@ -46,6 +46,14 @@ class Transactions
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    values = []
+    spend = SqlRunner.run(sql, values)
+    transactions_as_objects = spend.map{|money| Transactions.new(money)}
+    return transactions_as_objects
+  end
+
 
 #-------------------------Find methods----------------------------
 
@@ -88,6 +96,19 @@ class Transactions
     result = transaction.map { |order| Transactions.new(order)}
     return result
   end
+
+  def self.total()
+    sql = "SELECT SUM(amount) from transactions;"
+    values = []
+    result = SqlRunner.run(sql, values)
+    return result.first()["sum"].to_f
+    # SQL way, help from Darren
+
+    # all_trans = self.all()
+    # return all_trans.sum {|val| val.amount } #Ruby way, takes more memory
+
+  end
+
 
 
 
