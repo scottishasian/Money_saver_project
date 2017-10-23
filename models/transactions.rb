@@ -74,7 +74,7 @@ class Transactions
            WHERE id = $1"
     values = [id]
     transaction = SqlRunner.run(sql, values)
-    result = Transactions.new(transaction)
+    result = Transactions.new(transaction.first)
     return result
   end
 
