@@ -97,6 +97,17 @@ class Transactions
     return result
   end
 
+  def self.type_name(name)
+    sql = "SELECT types.type_name, transactions.* FROM types
+           INNER JOIN transactions
+           ON types.id = transactions.type_id
+           WHERE type_name = $1"
+    values = [name]
+    type = SqlRunner.run(sql, values)
+    result = type.map { |tag| Transactions.new(tag)}
+    return result
+  end
+
   def self.total()
     sql = "SELECT SUM(amount) from transactions;"
     values = []
@@ -106,7 +117,24 @@ class Transactions
 
     # all_trans = self.all()
     # return all_trans.sum {|val| val.amount } #Ruby way, takes more memory
+  end
 
+  #spend by types (SQL way)
+  def self.type_total(name)
+    sql = "SELECT SUM(transactions.amount) FROM types
+           INNER JOIN transactions
+           ON types.id = transactions.type_id
+           WHERE type_name = $1"
+    values = [name]
+    result = SqlRunner.run(sql, values)
+    return result.first()["sum"].to_f
+  end
+
+
+  #spend by vendor (Ruby way)
+  def self.vendor_total(name)
+    list = self.vendor_name(name) #calls vendor_name function for list.
+    return list.sum {|cost| cost.amount}
   end
 
 

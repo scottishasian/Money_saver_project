@@ -67,11 +67,20 @@ transaction5 = Transactions.new({
   'date_of_buy' => '2017-07-21'
 })
 
+transaction6 = Transactions.new({
+  'amount' => '40.06',
+  'description' => 'Chicken Nuggets',
+  'vendor_id' => vendor1.id,
+  'type_id' => type1.id,
+  'date_of_buy' => '2017-07-21'
+})
+
 transaction1.save
 transaction2.save
 transaction3.save
 transaction4.save
 transaction5.save
+transaction6.save
 
 binding.pry
 nil
