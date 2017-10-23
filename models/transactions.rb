@@ -67,7 +67,7 @@ class Transactions
     return type_details.type_name
   end
 
-  def vendor()
+  def vendor_name()
     sql = "SELECT * FROM vendors
            WHERE id = $1"
     values = [@vendor_id]
@@ -86,7 +86,7 @@ class Transactions
     return result
   end
 
-  def self.vendor_name(name)
+  def self.find_vendor_by_name(name)
     sql = "SELECT vendors.vendor_name, transactions.* FROM vendors
            INNER JOIN transactions
            ON vendors.id = transactions.vendor_id
@@ -97,7 +97,7 @@ class Transactions
     return result
   end
 
-  def self.type_name(name)
+  def self.find_type_by_name(name)
     sql = "SELECT types.type_name, transactions.* FROM types
            INNER JOIN transactions
            ON types.id = transactions.type_id
