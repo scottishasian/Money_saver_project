@@ -3,7 +3,8 @@ require_relative('../db/sql_runner')
 
 class Transactions
 
-  attr_reader :id, :amount, :name, :vendor_id, :type_id, :date_of_buy
+  attr_reader :id
+  attr_accessor :amount, :name, :vendor_id, :type_id, :date_of_buy
 
   def initialize(options)
     @id = options['id'].to_i

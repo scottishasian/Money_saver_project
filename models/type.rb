@@ -3,7 +3,8 @@ require_relative('../db/sql_runner')
 
 class Type
 
-  attr_reader :name, :id
+  attr_reader :id
+  attr_accessor :name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -56,5 +57,7 @@ class Type
     values = []
     SqlRunner.run(sql, values)
   end
+
+  #find by name.
 
 end

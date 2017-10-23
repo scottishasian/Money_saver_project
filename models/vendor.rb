@@ -2,7 +2,8 @@ require('pg')
 require_relative('../db/sql_runner')
 
 class Vendor
-  attr_reader :name, :id
+  attr_reader :id
+  attr_accessor :name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -56,6 +57,7 @@ class Vendor
     SqlRunner.run(sql, values)
   end
 
+  #find by name.
 
 
 end
