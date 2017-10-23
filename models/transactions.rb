@@ -57,16 +57,16 @@ end
 def self.find(id)
 end
 
-#   def self.vendor_name(name)
-#     sql = "SELECT vendors.name, transactions.* FROM vendors
-#            INNER JOIN transactions
-#            ON vendors.id = transactions.vendor_id
-#            WHERE name = $1"
-#     values = [name]
-#     transaction = SqlRunner.run(sql, values)
-#     result = Transaction.new(transaction.first)
-#    return result
-#   end
+def self.vendor_name(name)
+  sql = "SELECT vendors.vendor_name, transactions.* FROM vendors
+         INNER JOIN transactions
+         ON vendors.id = transactions.vendor_id
+         WHERE vendor_name = $1"
+  values = [name]
+  transaction = SqlRunner.run(sql, values)
+  result = transaction.map { |order| Transactions.new(order)}
+  return result
+end
 
 
 
