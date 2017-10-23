@@ -70,6 +70,12 @@ class Transactions
   end
 
   def self.find(id)
+    sql = "SELECT * FROM transactions
+           WHERE id = $1"
+    values = [id]
+    transaction = SqlRunner.run(sql, values)
+    result = Transactions.new(transaction)
+    return result
   end
 
   def self.vendor_name(name)
