@@ -49,32 +49,39 @@ class Transactions
 
 #-------------------------Find methods----------------------------
 
-def type()
-  sql = "SELECT * FROM types
-       WHERE id = $1"
-  values = [@type_id]
-  result = SqlRunner.run(sql, values)
-  type_info = result[0]
-  type_details = Type.new(type_info)
-  return type_details.type_name
-end
+  def type()
+    sql = "SELECT * FROM types
+           WHERE id = $1"
+    values = [@type_id]
+    result = SqlRunner.run(sql, values)
+    type_info = result[0]
+    type_details = Type.new(type_info)
+    return type_details.type_name
+  end
 
-def vendor()
-end
+  def vendor()
+    sql = "SELECT * FROM vendors
+           WHERE id = $1"
+    values = [@vendor_id]
+    result = SqlRunner.run(sql, values)
+    vendor_info = result[0]
+    vendor_details = Vendor.new(vendor_info)
+    return vendor_details.vendor_name
+  end
 
-def self.find(id)
-end
+  def self.find(id)
+  end
 
-def self.vendor_name(name)
-  sql = "SELECT vendors.vendor_name, transactions.* FROM vendors
-         INNER JOIN transactions
-         ON vendors.id = transactions.vendor_id
-         WHERE vendor_name = $1"
-  values = [name]
-  transaction = SqlRunner.run(sql, values)
-  result = transaction.map { |order| Transactions.new(order)}
-  return result
-end
+  def self.vendor_name(name)
+    sql = "SELECT vendors.vendor_name, transactions.* FROM vendors
+           INNER JOIN transactions
+           ON vendors.id = transactions.vendor_id
+           WHERE vendor_name = $1"
+    values = [name]
+    transaction = SqlRunner.run(sql, values)
+    result = transaction.map { |order| Transactions.new(order)}
+    return result
+  end
 
 
 
