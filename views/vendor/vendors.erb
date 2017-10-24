@@ -1,1 +1,30 @@
 <p> List of venders, add vendors, delete vendors</p>
+
+<h1>Add a new vendor here.</h1>
+
+<form method="post" action="/vendors">
+  <label for="vendor-field">Enter New Vendor:</label>
+    <input type="text" name="vendor_name" id="vendor-field"/>
+  <input type="submit" value="Add Vendor">
+</form>
+
+
+<h1> Here is your list of vendors.</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vendor Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @vendors.each do |vendor| %>
+<form method="post" action="/vendors/<%= vendor.id %>/delete">
+    <td> <%= vendor.vendor_name %> </td>
+    <td><input type="submit" value="Delete"/></td>
+</form>
+  </tr>
+  </tbody>
+  <% end %>
+</table>

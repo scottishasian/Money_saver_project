@@ -47,7 +47,6 @@ end
 # end
 
 post '/transactions' do
-  print params
   @transaction = Transactions.new(params)
   @transaction.save()
   erb(:create)
