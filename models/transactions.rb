@@ -149,7 +149,19 @@ class Transactions
     return list.sum {|cost| cost.amount}
   end
 
+#--------- Budget ---------
+  #
+  # def self.budget(amount)
+  #   return amount
+  # end
 
+#--------Spend check
+
+  def check_spending(value)
+    if value < 200
+      return "You are running out of money!"
+    end
+  end
 
 
 
