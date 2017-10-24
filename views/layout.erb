@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" media="screen" href="/style.css">
     <meta charset="utf-8">
     <title>Money Saver</title>
   </head>
   <body>
-    <nav class="dropdown">
-      <button class="dropbtn">Menu</button>
+    <nav>
+    <div class="dropdown">
+      <button class="dropbutton">Menu</button>
       <div class="dropdown-content">
-      <ul>
-        <li><a href="/">Home Page</a></li>
-        <li><a href="/transactions">All Transactions</a></li>
-        <li><a href="/transactions/add">Add a Transaction</a></li>
-        <li><a href="/vendors">Vendors</a></li>
-        <li><a href="/types">Types</a></li>
-        <li><a href="/transactions/sort_by_type">Transactions by Type</a></li>
-        <li><a href="/transactions/sort_by_vendor">Transactions by Vendor</a></li>
-      </ul>
+        <a href="/">Home Page</a>
+        <a href="/transactions">All Transactions</a>
+        <a href="/transactions/add">Add a Transaction</a>
+        <a href="/vendors">Vendors</a>
+        <a href="/types">Types</a>
+        <a href="/transactions/sort_by_type">Transactions by Type</a>
+        <a href="/transactions/sort_by_vendor">Transactions by Vendor</a>
       </div>
+    </div>
     </nav>
     <%= yield %>
   </body>
