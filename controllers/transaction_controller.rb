@@ -25,8 +25,19 @@ end
 
 post '/transactions/sort_by_type' do
   @transactions = Transactions.find_type_by_name(params["name"])
-  @total = Transactions.total()
+  @total = Transactions.total_by_type(params["name"])
   erb(:type_sorted)
+end
+
+get '/transactions/sort_by_vendor' do
+  @transactions = Transactions.all()
+  erb(:vendor_sorted)
+end
+
+post '/transactions/sort_by_vendor' do
+  @transactions = Transactions.find_vendor_by_name(params["name"])
+  @total = Transactions.total_by_vendor(params["name"])
+  erb(:vendor_sorted)
 end
 
 
