@@ -52,6 +52,19 @@ post '/transactions' do
   erb(:create)
 end
 
+get '/transactions/:id/edit' do
+  @transactions = Transactions.all()
+  @vendors = Vendor.all()
+  @types = Type.all()
+  erb(:edit_transaction)
+end
+
+post '/transactions/:id/edit' do
+  edit = Transactions.find(params[:id])
+  edit.update()
+  erb(:edit_transaction_done)
+end
+
 post '/transactions/:id/delete' do
   transaction = Transactions.find(params[:id])
   transaction.delete()

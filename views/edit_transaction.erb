@@ -1,0 +1,36 @@
+<h1>Please Update Transactions here.</h1>
+
+<form method="post" action="/transactions">
+
+  <label for="vendor_names">Select a Vendor:</label>
+  <select name="vendor_id" id="vendor_names">
+    <% for vendor in @vendors %>
+      <option value="<%= vendor.id %>"><%= vendor.vendor_name %></option>
+    <% end %>
+  </select>
+  <br></br>
+
+  <label for="type_names">Select a Type:</label>
+  <select name="type_id" id="type_names">
+    <% for type in @types %>
+      <option value="<%= type.id %>"><%= type.type_name %></option>
+    <% end %>
+  </select>
+  <br></br>
+
+  <label for="amount-field">Enter Amount:</label>
+  <input type="text" name="amount" id="amount-field"
+   value="@transactions.amount"/>
+  <br></br>
+
+  <label for="description-field">Enter description:</label>
+  <input type="text" name="description" id="description-field"/>
+  <br></br>
+
+  <label for="date-field">Enter a date:</label>
+  <input type="date" name="date_of_buy" id="date-field"/>
+
+
+
+  <input type="submit" value="Update Transaction">
+</form>
