@@ -1,1 +1,29 @@
-<p> test </p>
+
+<h1>Add a new type here.</h1>
+
+<form method="post" action="/types">
+  <label for="type-field">Enter New Type:</label>
+    <input type="text" name="type_name" id="type-field"/>
+  <input type="submit" value="Add type">
+</form>
+
+
+<h1> Here is your list of spending types.</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @types.each do |type| %>
+<form method="post" action="/types/<%= type.id %>/delete">
+    <td> <%= type.type_name %> </td>
+    <td><input type="submit" value="Delete"/></td>
+</form>
+  </tr>
+  </tbody>
+  <% end %>
+</table>

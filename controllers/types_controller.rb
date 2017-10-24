@@ -8,3 +8,15 @@ get '/types' do
   @types = Type.all()
   erb(:"types/types")
 end
+
+post '/types' do
+  @type = Type.new(params)
+  @type.save()
+  redirect '/types'
+end
+
+post '/types/:id/delete' do
+  type = Type.find(params[:id])
+  type.delete()
+  redirect '/types'
+end
