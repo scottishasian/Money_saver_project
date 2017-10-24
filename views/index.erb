@@ -5,6 +5,7 @@
         <th>Vendor Name</th>
         <th>Transaction Type</th>
         <th>Amount(£)</th>
+        <th>Description</th>
         <th>Date</th>
       </tr>
     </thead>
@@ -13,11 +14,25 @@
       <% @transactions.each do |transaction| %>
       <td> <%= transaction.vendor_name %> </td>
       <td> <%= transaction.type %> </td>
-      <td> <%= transaction.amount %> </td>
+      <td> £<%= transaction.amount %> </td>
+      <td> <%= transaction.description %> </td>
       <td> <%= transaction.date_of_buy %> </td>
     </tr>
     </tbody>
     <% end %>
   </table>
+</div>
 
   <p> Your total is <%= @total %> .</p>
+
+<form method="get" action="/transactions">
+
+  <label for="type_names">Select a Type:</label>
+  <select name="type_id" id="type_names">
+    <% for type in @types %>
+      <option value="<%= type.id %>"><%= type.type_name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Sort">
+</form>

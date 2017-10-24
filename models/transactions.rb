@@ -47,7 +47,7 @@ class Transactions
   end
 
   def self.all()
-    sql = "SELECT * FROM transactions"
+    sql = "SELECT * FROM transactions ORDER BY date_of_buy DESC"
     values = []
     spend = SqlRunner.run(sql, values)
     transactions_as_objects = spend.map{|money| Transactions.new(money)}
@@ -108,6 +108,18 @@ class Transactions
     return result
   end
 
+  def self.sort_by_type(id)
+    sql = "SELECT * FROM types
+           WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    type = result.map { |tag| Transactions.new(tag)}
+    return type
+  end
+
+
+#---------totals-----------
+
   def self.total()
     sql = "SELECT SUM(amount) from transactions;"
     values = []
@@ -120,7 +132,7 @@ class Transactions
   end
 
   #spend by types (SQL way)
-  def self.type_total(name)
+  def self.total_by_type(name)
     sql = "SELECT SUM(transactions.amount) FROM types
            INNER JOIN transactions
            ON types.id = transactions.type_id
@@ -132,8 +144,8 @@ class Transactions
 
 
   #spend by vendor (Ruby way)
-  def self.vendor_total(name)
-    list = self.vendor_name(name) #calls vendor_name function for list.
+  def self.total_by_vendor(name)
+    list = self.find_vendor_by_name(name) #calls vendor_name function for list.
     return list.sum {|cost| cost.amount}
   end
 
