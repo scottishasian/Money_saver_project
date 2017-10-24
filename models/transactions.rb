@@ -157,7 +157,7 @@ class Transactions
 
 #--------Spend check
 
-  def check_spending(value)
+  def self.check_spending(value)
     if value < 200
       return "You are running out of money!"
     end
