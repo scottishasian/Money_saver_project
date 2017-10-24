@@ -18,6 +18,23 @@ get '/transactions/add' do
   erb(:add)
 end
 
+get '/transactions/sort_by_type' do
+  @transactions = Transactions.all()
+  erb(:type_sorted)
+end
+
+post '/transactions/sort_by_type' do
+  @transactions = Transactions.find_type_by_name(params["name"])
+  @total = Transactions.total()
+  erb(:type_sorted)
+end
+
+
+# get '/transactions/sort_by_type/:name' do
+#   Transactions.by_name(params["name"])
+#   erb(:type_sorted)
+# end
+
 post '/transactions' do
   print params
   @transaction = Transactions.new(params)

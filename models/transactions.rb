@@ -108,14 +108,14 @@ class Transactions
     return result
   end
 
-  def self.sort_by_type(id)
-    sql = "SELECT * FROM types
-           WHERE id = $1"
-    values = [id]
-    result = SqlRunner.run(sql, values)
-    type = result.map { |tag| Transactions.new(tag)}
-    return type
-  end
+  # def self.sort_by_type(id)
+  #   sql = "SELECT * FROM types
+  #          WHERE id = $1"
+  #   values = [id]
+  #   result = SqlRunner.run(sql, values)
+  #   type = result.map { |tag| Transactions.new(tag)}
+  #   return type
+  # end
 
 
 #---------totals-----------
