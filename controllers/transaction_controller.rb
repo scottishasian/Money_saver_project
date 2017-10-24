@@ -52,3 +52,9 @@ post '/transactions' do
   @transaction.save()
   erb(:create)
 end
+
+post '/transactions/:id/delete' do
+  transaction = Transactions.find(params[:id])
+  transaction.delete()
+  redirect '/transactions'
+end

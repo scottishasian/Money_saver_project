@@ -12,11 +12,15 @@
     <tbody>
       <tr>
       <% @transactions.each do |transaction| %>
+      <form method="post" action="/transactions/<%= transaction.id %>/delete">
       <td> <%= transaction.vendor_name %> </td>
       <td> <%= transaction.type %> </td>
       <td> £<%= transaction.amount %> </td>
       <td> <%= transaction.description %> </td>
       <td> <%= transaction.date_of_buy %> </td>
+      <td><input type="submit" value="Delete"/></td>
+    </form>
+
     </tr>
     </tbody>
     <% end %>
