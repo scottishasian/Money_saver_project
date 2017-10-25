@@ -53,16 +53,17 @@ post '/transactions' do
 end
 
 get '/transactions/:id/edit' do
+  @transaction = Transactions.find(params[:id])
   @transactions = Transactions.all()
   @vendors = Vendor.all()
   @types = Type.all()
   erb(:edit_transaction)
 end
 
-post '/transactions/:id/edit' do
-  edit = Transactions.find(params[:id])
-  edit.update()
-  erb(:edit_transaction_done)
+post '/transactions/:id' do
+  @transaction = Transactions.new(params)
+  @transaction.update()
+  redirect '/transactions'
 end
 
 post '/transactions/:id/delete' do
