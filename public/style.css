@@ -11,7 +11,7 @@ nav h1 {
   font-family: 'Abril Fatface', cursive;
   font-style: italic;
   position: absolute;
-  margin-left: 35%;
+  margin-left: 40%;
   margin-top: auto;
 }
 
@@ -31,9 +31,10 @@ nav h1 {
 
 .dropbutton {
   background-color: black;
+  border: none;
   color: white;
   padding: 20px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -136,6 +137,42 @@ th {
   font-size: 20px;
 }
 
+.grid-row-header {
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.cell {
+  flex: 1;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-row-body {
+  font-family: 'Optima', 'sans-serif';
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+
+.grid-row-body:hover {
+  background-color: #CFCFCF;
+}
+
+@media all and ( min-width: 720px) {
+  .grid-row-header {
+    flex-direction: row;
+  }
+
+  .grid-row-body {
+    flex-direction: row;
+  }
+}
+
 
 body {
   align-content: center;
@@ -164,6 +201,17 @@ button {
   font-style: bold;
 }
 
-tr:hover {
-  background-color: #CFCFCF;
+
+.delete {
+  background-color: #555555;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.edit {
+  background-color: #FF8C00;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
 }
