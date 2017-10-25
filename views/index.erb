@@ -1,12 +1,12 @@
 <div class="transactions">
 
   <h1>All Transactions</h1>
-  <br></br>  
+  <br></br>
   <table>
     <thead>
       <tr>
         <th>Vendor Name</th>
-        <th>Transaction Type</th>
+        <th>Type</th>
         <th>Amount(£)</th>
         <th>Description</th>
         <th>Date</th>
@@ -22,8 +22,8 @@
       <td> <%= transaction.description %> </td>
       <td> <%= transaction.date_of_buy %> </td>
       <td><input type="submit" value="Delete"/></td>
-      <td><a href="/transactions/<%= transaction.id %>/edit">Edit</a></td>
       </form>
+      <td><a href="/transactions/<%= transaction.id %>/edit"><button>Edit</button></a></td>
 
 
     </tr>
