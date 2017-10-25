@@ -1,3 +1,5 @@
+
+<div class="Home">
 <form method="post" action="/transactions/sort_by_vendor">
 
   <label for="type_name">Enter Vendor:</label>
@@ -5,8 +7,10 @@
 
   <input type="submit" value="Search">
 </form>
+</div>
 
 <div class="transactions">
+  <div class="sort">
   <table>
     <thead>
       <tr>
@@ -29,6 +33,6 @@
     </tbody>
     <% end %>
   </table>
+  <p> Your total is <%= @total %> .</p>
+  </div>
 </div>
-
-<p> Your total is <%= @total %> .</p>

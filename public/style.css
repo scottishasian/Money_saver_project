@@ -1,6 +1,20 @@
+nav {
+  background-color: black;
+}
+
+nav h1 {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  font-family: 'Times', 'Arial', sans-serif;
+  font-style: italic;
+}
+
 
 .dropbutton {
-  background-color: green;
+  background-color: black;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -8,10 +22,12 @@
   border-radius: 10px;
 }
 
+
 .dropdown {
   display: inline-block;
   border-radius: 10px;
-  padding-top: 20px;
+  padding-top: 5px;
+  margin-right: 100%;
 }
 
 .dropdown-content {
@@ -30,6 +46,7 @@
   text-decoration: none;
   display: block;
   border-radius: 10px;
+  font-family: 'Luminari', 'fantasy';
 }
 
 .dropdown-content a:hover {
@@ -46,21 +63,66 @@
 
 .Home {
   text-align: center;
+  border: 5px solid;
+  border-radius: 5%;
+  max-width: 700px;
+  min-width: 500px;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
 
 }
 
 .transactions {
-  position: absolute;
   text-align: center;
   padding: 10px;
   padding-top: 30px;
   border: 5px solid;
   min-width: 500px;
   max-width: 700px;
+  border-radius: 5%;
+  background-color: white;
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
 }
 
-footer img {
-  height: 400px;
-  width: 100%;
-  position: absolute;
+.small_tb {
+  border: 5px solid;
+  align-content: center;
+  min-width: 100px;
+  max-width: 200px;
+  border-radius: 5%;
+  background-color: white;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+}
+
+.small_tb p {
+  font-family: 'Impact', 'fantasy';
+  font-size: 20px;
+}
+
+
+body {
+  align-content: center;
+  text-align: center;
+}
+
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
+.sort {
+  padding-top: 20px;
+}
+
+button {
+  font-family: 'Didot', 'serif';
 }
