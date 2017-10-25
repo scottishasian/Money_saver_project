@@ -7,7 +7,9 @@
 <p> Your total amount spent is £<%= @total %></p>
   <% left_over = 1000 - @total %>
 <p> You have £<%= left_over.round(2) %> remaining</p>
+<div class="warning">
   <% if left_over < 200 %>
   <%= "Your budget is running dangerously low!" %>
   <% end %>
+</div>
 </div>

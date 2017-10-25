@@ -1,10 +1,3 @@
-Over the next week you have the chance to consolidate and expand on everything you have learned:
-
-- Ruby fundamentals
-- TDD (where appropriate)
-- OOP
-- Web Programming ( REST/MVC )
-- Databases with CRUD actions
 
 ## MoneyCashboard
 
@@ -28,4 +21,13 @@ You must be able to create new Transactions ( which should include a merchant na
 
 ### User Notes:
 
+- Create a database via 'createdb money_saver' in terminal.
+- Attach the money_saver.sql via 'psql -d money_saver -f db/money_saver.sql'
+- Run the server via 'ruby app.rb'
+- Access the website via 'localhost:4567/'
+
 ### Experiences during the project:
+
+Generally I have found this project very enjoyable as it allowed me to push my backend coding abilities and consolidate the knowledge I have gained over the past few weeks. The project was a very relatable concept which helped greatly with the planning.
+
+The most frustrating parts of this endeavour has been the HTML and CSS as these are areas I have been quite unfamiliar with.

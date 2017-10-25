@@ -64,7 +64,7 @@ nav h1 {
 .Home {
   text-align: center;
   border: 5px solid;
-  border-radius: 5%;
+  border-radius: 10%;
   max-width: 700px;
   min-width: 500px;
   background-color: white;
@@ -72,21 +72,32 @@ nav h1 {
   margin: auto;
   margin-top: 20px;
   width: 60%;
+  font-family: 'Impact','fantasy';
+}
 
+.Home p {
+  font-family: 'Andale Mono', 'monospace';
 }
 
 .transactions {
+  border-collapse: collapse;
   text-align: center;
   padding: 10px;
   padding-top: 30px;
   border: 5px solid;
   min-width: 500px;
-  max-width: 700px;
+  max-width: 800px;
   border-radius: 5%;
   background-color: white;
   margin: auto;
   margin-top: 20px;
-  width: 60%;
+  width: 50%;
+  font-family: 'Impact','fantasy';
+}
+
+.transactions td {
+  font-family: 'Optima', 'sans-serif';
+  border-bottom: 1px solid #ddd;
 }
 
 .small_tb {
@@ -100,10 +111,20 @@ nav h1 {
   margin: auto;
   margin-top: 20px;
   width: 60%;
+  font-family: 'Impact','fantasy';
 }
 
 .small_tb p {
-  font-family: 'Impact', 'fantasy';
+  font-size: 20px;
+}
+
+.small_tb td {
+  font-family: 'Optima', 'sans-serif';
+}
+
+th {
+  font-style: italic;
+  text-decoration: underline;
   font-size: 20px;
 }
 
@@ -126,4 +147,15 @@ body {
 
 button {
   font-family: 'Didot', 'serif';
+}
+
+.warning {
+  font-size: 20px;
+  font-family: 'Impact','fantasy';
+  color: red;
+  font-style: bold;
+}
+
+tr:hover {
+  background-color: #CFCFCF;
 }

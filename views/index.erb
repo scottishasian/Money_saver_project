@@ -2,33 +2,41 @@
 
   <h1>All Transactions</h1>
   <br></br>
-  <table class="grid">
-    <thead>
-      <tr class="grid">
-        <th>Vendor Name</th>
-        <th>Type</th>
-        <th>Amount(£)</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <% @transactions.each do |transaction| %>
-      <form method="post" action="/transactions/<%= transaction.id %>/delete">
-      <td> <%= transaction.vendor_name %> </td>
-      <td> <%= transaction.type %> </td>
-      <td> £<%= transaction.amount %> </td>
-      <td> <%= transaction.description %> </td>
-      <td> <%= transaction.date_of_buy %> </td>
-      <td><input type="submit" value="Delete"/></td>
-      </form>
-      <td><a href="/transactions/<%= transaction.id %>/edit"><button>Edit</button></a></td>
-
-
-    </tr>
-    </tbody>
-    <% end %>
-  </table>
-  <p> Your total is <%= @total %> .</p>
+  <div class="grid">
+    <table>
+      <thead>
+        <div class="grid-row">
+        <tr>
+          <th>Vendor Name</th>
+          <th>Type</th>
+          <th>Amount(£)</th>
+          <th>Description</th>
+          <th>Date</th>
+        </tr>
+        </div>
+      </thead>
+      <tbody>
+        <div class="grid-row">
+        <div class="table_rows">
+        <tr>
+          <% @transactions.each do |transaction| %>
+          <form method="post" action="/transactions/<%= transaction.id %>/delete">
+            <td> <%= transaction.vendor_name %> </td>
+            <td> <%= transaction.type %> </td>
+            <td> £<%= transaction.amount %> </td>
+            <td> <%= transaction.description %> </td>
+            <td> <%= transaction.date_of_buy %> </td>
+            <td><input type="submit" value="Delete"/></td>
+          </form>
+          <td><a href="/transactions/<%= transaction.id %>/edit"><button>Edit</button></a></td>
+        </tr>
+        </div>
+        </div>
+      </tbody>
+        <% end %>
+    </table>
+  </div>
+  <div class="warning">
+    <p> Your total is £<%= @total %> </p>
+  </div>
 </div>
