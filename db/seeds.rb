@@ -2,6 +2,7 @@ require('pry')
 require_relative('../models/vendor.rb')
 require_relative('../models/type.rb')
 require_relative('../models/transactions.rb')
+require_relative('../models/user.rb')
 
 Vendor.delete_all
 Type.delete_all
