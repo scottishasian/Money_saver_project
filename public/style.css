@@ -10,7 +10,7 @@ nav h1 {
   text-align: center;
   display: block;
   font-size: 40px;
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Saira', sans-serif;
   font-style: italic;
   position: absolute;
   margin-left: 40%;
@@ -202,7 +202,7 @@ th {
 body {
   align-content: center;
   text-align: center;
-  background-image: url('kanagawa.jpg');
+  background-image: url('seoul.jpg');
   background-size: cover;
 }
 
