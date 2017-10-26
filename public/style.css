@@ -13,7 +13,7 @@ nav h1 {
   font-family: 'Saira', sans-serif;
   font-style: italic;
   position: absolute;
-  margin-left: 40%;
+  margin-left: 37%;
   margin-top: auto;
 
 }
@@ -199,11 +199,10 @@ th {
 }
 
 
-body {
-  align-content: center;
+html {
   text-align: center;
   background-image: url('seoul.jpg');
-  background-size: cover;
+  height: 100%;
   background-repeat: no-repeat;
 }
 
