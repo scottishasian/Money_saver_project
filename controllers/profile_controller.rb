@@ -5,6 +5,7 @@ require_relative('../models/user.rb')
 
 get '/' do
   @transactions = Transactions.all()
+  @budget = Budget.all()
   @total = Transactions.total()
   erb(:home)
 end

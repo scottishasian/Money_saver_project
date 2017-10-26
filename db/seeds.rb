@@ -7,6 +7,7 @@ require_relative('../models/user.rb')
 Vendor.delete_all
 Type.delete_all
 Transactions.delete_all
+Budget.delete_all
 
 vendor1 = Vendor.new('vendor_name' => 'Sainsburys')
 vendor2 = Vendor.new('vendor_name' => 'The Gym')
@@ -82,6 +83,12 @@ transaction3.save
 transaction4.save
 transaction5.save
 transaction6.save
+
+budget1 = Budget.new({
+  'budget' => '0.00'
+  })
+
+budget1.save
 
 binding.pry
 nil

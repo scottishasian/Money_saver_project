@@ -43,7 +43,7 @@ class Vendor
     return result
   end
 
-  def update() #come back to
+  def update() 
     sql = "UPDATE vendors
            SET (vendor_name) = ($1)
            WHERE id = $2"
@@ -57,14 +57,5 @@ class Vendor
     SqlRunner.run(sql, values)
   end
 
-  #find by name. Need to write it to return all transaction data. Maybe put in transaction.rb
-  # def self.find(name)
-  #   sql = "SELECT * FROM vendors
-  #          WHERE name = $1"
-  #   values = [name]
-  #   vendors = SqlRunner.run(sql, values)
-  #   result = Vendor.new(vendors.first)
-  #   return result
-  # end
 
 end

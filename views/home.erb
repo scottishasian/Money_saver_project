@@ -1,11 +1,10 @@
 <div class="Home">
 <h1>Financial Summary</h1>
 
-
 <p> Your budget is <span style="color:green"; style="font-size:30px"> £<%= 1000 %></span> </p>
 <p> Your total amount spent is <span style="color:red"> £<%= @total %></span></p>
   <% left_over = 1000 - @total %>
-<p> You have £<%= left_over.round(2) %> remaining</p>
+<p> You have <span style="color:green">£<%= left_over.round(2) %></span> remaining</p>
 <div class="warning">
   <% if left_over < 0 %>
   <%= "You have exceeded your budget!" %>
