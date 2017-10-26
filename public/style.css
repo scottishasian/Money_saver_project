@@ -1,5 +1,7 @@
 nav {
   background-color: black;
+  width: 100%;
+  display: inline-block;
 }
 
 nav h1 {
@@ -13,6 +15,7 @@ nav h1 {
   position: absolute;
   margin-left: 40%;
   margin-top: auto;
+
 }
 
 .dropdown {
@@ -55,7 +58,8 @@ nav h1 {
   text-decoration: none;
   display: block;
   border-radius: 10px;
-  font-family: 'Impact', 'fantasy';
+  font-family: 'Didot', 'serif';
+  font-size: 20px;
 }
 
 .dropdown-content a:hover {
@@ -72,8 +76,8 @@ nav h1 {
 
 .Home {
   text-align: center;
-  border: 5px solid;
-  border-radius: 10%;
+  border: 1px solid;
+  border-radius: 10px;
   max-width: 700px;
   min-width: 500px;
   background-color: white;
@@ -82,10 +86,18 @@ nav h1 {
   margin-top: 20px;
   width: 60%;
   font-family: 'Impact','fantasy';
+  line-height: 250%;
 }
 
 .Home p {
   font-family: 'Andale Mono', 'monospace';
+  font-size: 20px;
+}
+
+.Home h1 {
+  font-size: 30px;
+  padding-bottom: 20px;
+  font-style: italic;
 }
 
 .transactions {
@@ -93,7 +105,7 @@ nav h1 {
   text-align: center;
   padding: 10px;
   padding-top: 30px;
-  border: 5px solid;
+  border: 2px solid;
   min-width: 500px;
   max-width: 800px;
   border-radius: 5%;
@@ -102,6 +114,15 @@ nav h1 {
   margin-top: 20px;
   width: 50%;
   font-family: 'Impact','fantasy';
+  line-height: 200%;
+}
+
+.transactions h1 {
+  font-size: 30px;
+}
+
+.transactions p {
+  font-size: 30px;
 }
 
 .transactions td {
@@ -110,7 +131,7 @@ nav h1 {
 }
 
 .small_tb {
-  border: 5px solid;
+  border: 1px solid;
   align-content: center;
   min-width: 100px;
   max-width: 200px;
@@ -120,11 +141,15 @@ nav h1 {
   margin: auto;
   margin-top: 20px;
   width: 60%;
-  font-family: 'Impact','fantasy';
+  font-family: 'Roboto',sans-serif;
+  line-height: 250%;
 }
 
 .small_tb p {
-  font-size: 20px;
+  font-size: 30px;
+  background-color: grey;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .small_tb td {
@@ -133,18 +158,17 @@ nav h1 {
 
 th {
   font-style: italic;
-  text-decoration: underline;
   font-size: 20px;
 }
 
 .grid-row-header {
   font-style: italic;
-  text-decoration: underline;
   font-size: 20px;
 }
 
 .cell {
   flex: 1;
+  padding: 5px;
 }
 
 .grid-row {
@@ -178,6 +202,7 @@ body {
   align-content: center;
   text-align: center;
   background-image: url('kanagawa.jpg');
+  background-size: cover;
 }
 
 .grid {
@@ -205,13 +230,21 @@ button {
 .delete {
   background-color: #555555;
   color: white;
+  font-size: 15px;
   padding: 15px;
   border-radius: 8px;
+  border: none;
 }
 
 .edit {
   background-color: #FF8C00;
   color: white;
+  font-size: 15px;
   padding: 15px;
   border-radius: 8px;
+  border: none;
+}
+
+label {
+  font-size: 20px;
 }

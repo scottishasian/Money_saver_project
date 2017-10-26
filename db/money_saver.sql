@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS types;
 DROP TABLE IF EXISTS vendors;
+DROP TABLE IF EXISTS budget;
+
 
 CREATE TABLE vendors (
   id SERIAL8 PRIMARY KEY,
@@ -19,4 +21,9 @@ CREATE TABLE transactions (
   vendor_id INT8 REFERENCES vendors(id) ON DELETE CASCADE,
   type_id INT8 REFERENCES types(id) ON DELETE CASCADE,
   date_of_buy DATE
+);
+
+CREATE TABLE budget (
+  id SERIAL8 PRIMARY KEY,
+  budget DECIMAL(10,2)
 );

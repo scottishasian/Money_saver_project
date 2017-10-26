@@ -1,16 +1,13 @@
+require('pg')
+require_relative('../db/sql_runner')
 
 class Budget
 
   attr_accessor :budget
 
-  def initialize()
-    @budget = 0
+  def initialize(options)
+    @budget = options['budget'].to_f
   end
-
-  def self.set_budget(number)
-    return @budget += number
-  end
-
 
 end
 

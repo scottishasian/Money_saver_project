@@ -10,28 +10,32 @@
 </form>
 </div>
 
-<div class="transactions">
+<div class="grid">
+  <div class="transactions">
   <table>
     <thead>
-      <tr>
-        <th>Vendor Name</th>
-        <th>Type</th>
-        <th>Amount(£)</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
+      <div class="grid-row grid-row-header">
+        <div class="cell">Vendor Name</div>
+        <div class="cell">Type</div>
+        <div class="cell">Amount(£)</div>
+        <div class="cell">Description</div>
+        <div class="cell">Date</div>
+      </div>
     </thead>
     <tbody>
-      <tr>
+
       <% @transactions.each do |transaction| %>
-      <td> <%= transaction.vendor_name %> </td>
-      <td> <%= transaction.type %> </td>
-      <td> £<%= transaction.amount %> </td>
-      <td> <%= transaction.description %> </td>
-      <td> <%= transaction.date_of_buy %> </td>
+      <div class="grid-row grid-row-body">
+        <div class="cell"> <%= transaction.vendor_name %> </div>
+        <div class="cell"> <%= transaction.type %> </div>
+        <div class="cell"> £<%= transaction.amount %> </div>
+        <div class="cell"> <%= transaction.description %> </div>
+        <div class="cell"> <%= transaction.date_of_buy %> </div>
+      </div>
     </tr>
     </tbody>
     <% end %>
   </table>
-  <p> Your total is <%= @total %> .</p>
+  <p> Your total is: <%= @total %> </p>
+</div>
 </div>

@@ -108,15 +108,6 @@ class Transactions
     return result
   end
 
-  # def self.sort_by_type(id)
-  #   sql = "SELECT * FROM types
-  #          WHERE id = $1"
-  #   values = [id]
-  #   result = SqlRunner.run(sql, values)
-  #   type = result.map { |tag| Transactions.new(tag)}
-  #   return type
-  # end
-
 
 #---------totals-----------
 
@@ -149,19 +140,7 @@ class Transactions
     return list.sum {|cost| cost.amount}
   end
 
-#--------- Budget ---------
-  #
-  # def self.budget(amount)
-  #   return amount
-  # end
 
-#--------Spend check
-
-  def self.check_spending(value)
-    if value < 200
-      return "You are running out of money!"
-    end
-  end
 
 
 
