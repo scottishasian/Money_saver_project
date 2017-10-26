@@ -54,10 +54,9 @@ class Transactions
     return transactions_as_objects
   end
 
-
 #-------------------------Find methods----------------------------
 
-  def type()
+  def type() #Need to name this to be more precise.
     sql = "SELECT * FROM types
            WHERE id = $1"
     values = [@type_id]
@@ -108,7 +107,6 @@ class Transactions
     return result
   end
 
-
 #---------totals-----------
 
   def self.total()
@@ -139,9 +137,5 @@ class Transactions
     list = self.find_vendor_by_name(name) #calls vendor_name function for list.
     return list.sum {|cost| cost.amount}
   end
-
-
-
-
 
 end

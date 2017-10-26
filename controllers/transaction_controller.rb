@@ -40,12 +40,6 @@ post '/transactions/sort_by_vendor' do
   erb(:vendor_sorted)
 end
 
-
-# get '/transactions/sort_by_type/:name' do
-#   Transactions.by_name(params["name"])
-#   erb(:type_sorted)
-# end
-
 post '/transactions' do
   @transaction = Transactions.new(params)
   @transaction.save()

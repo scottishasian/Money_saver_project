@@ -43,7 +43,7 @@ class Vendor
     return result
   end
 
-  def update() 
+  def update()
     sql = "UPDATE vendors
            SET (vendor_name) = ($1)
            WHERE id = $2"
@@ -56,6 +56,5 @@ class Vendor
     values = []
     SqlRunner.run(sql, values)
   end
-
 
 end

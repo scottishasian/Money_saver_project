@@ -58,6 +58,4 @@ class Type
     SqlRunner.run(sql, values)
   end
 
-  #find by name.
-
 end
