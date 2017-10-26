@@ -204,6 +204,7 @@ body {
   text-align: center;
   background-image: url('seoul.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .grid {
