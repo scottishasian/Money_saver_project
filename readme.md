@@ -21,6 +21,9 @@ You must be able to create new Transactions ( which should include a merchant na
 
 ### User Notes:
 
+- brew install ruby
+- gem install sinatra sinatra-contrib.
+- gem install pg.  (Postgres)
 - Create a database via 'createdb money_saver' in terminal.
 - Attach the money_saver.sql via 'psql -d money_saver -f db/money_saver.sql'
 - Run the server via 'ruby app.rb'
